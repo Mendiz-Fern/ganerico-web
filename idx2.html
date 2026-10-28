@@ -1,0 +1,198 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <link href='https://fonts.googleapis.com/css?family=Lato' rel='stylesheet'>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>TEST</title>
+  <style>
+    body {
+      font-family: 'Lato';
+      font-size: 3vw;
+      margin: 0;
+      padding: 0;
+    }
+
+    .container {
+      width: 100%;
+      height: 1300px; /* Set the height to a value that enables scrolling */
+      /* overflow-y: scroll; /* Enable vertical scrolling */
+      position: relative;
+    }
+    
+    .text-wrapper1 {
+      width: 100%;
+      position: fixed;
+      top: 0;
+      left: 0;
+      transition: transform 0.5s ease;
+    }
+    
+    .text-wrapper2 {
+      width: 100%;
+      position: fixed;
+      top: -300;
+      left: 0;
+      transition: transform 0.5s ease;
+    }
+
+    .image1-wrapper {
+      width: 50%; /* Twice the width of the viewport to allow space for both images */
+      height: 500px;
+      position: fixed; /* Fix the images in the viewport */
+      top: 0;
+      left: 0;
+      transition: transform 0.5s ease; /* Add smooth animation when scrolling */
+    }
+
+    .image2-wrapper {
+      width: 50%; /* Twice the width of the viewport to allow space for both images */
+      height: 500px;
+      position: fixed; /* Fix the images in the viewport */
+      top: 0;
+      right: 0;
+      transition: transform 0.5s ease; /* Add smooth animation when scrolling */
+    }
+
+    .image3-wrapper {
+      width: 100%; /* Twice the width of the viewport to allow space for both images */
+      height: 25vw;
+      position: fixed; /* Fix the images in the viewport */
+      top: -200;
+      right: 0;
+      transition: transform 0.5s ease; /* Add smooth animation when scrolling */
+    }
+
+    .image4-wrapper {
+      width: 50%; /* Twice the width of the viewport to allow space for both images */
+      height: 40vw;
+      position: fixed; /* Fix the images in the viewport */
+      top: 25vw;
+      left: 100vw;
+      transition: transform 0.5s ease; /* Add smooth animation when scrolling */
+    }
+
+    .image5-wrapper {
+      width: 50%; /* Twice the width of the viewport to allow space for both images */
+      height: 40vw;
+      position: fixed; /* Fix the images in the viewport */
+      top: 25vw;
+      left: -50vw;
+      transition: transform 0.5s ease; /* Add smooth animation when scrolling */
+    }
+    
+    .img1{
+      z-index: 1;
+      width: 100%;
+      position: relative
+      float: left;
+    }
+    
+    .img2{
+      z-index: 2;
+      width: 100%;
+      position: relative
+      float: right;
+    }
+    
+    .img3{
+      width: 100%;
+      position: relative
+      float: top;
+    }
+    
+    .img4{
+      width: 100%;
+      position: relative
+      float: right;
+    }
+    
+    .img5{
+      width: 100%;
+      position: relative
+      float: right;
+    }
+
+
+  </style>
+</head>
+<body>
+  <div class="container">
+    <div class="text-wrapper1">
+       <h1 style="text-align:center"> Welcome! </h1>
+       <p1><center><br><br><br><br><br><br><br><br>(Scroll down)</center></p1>
+    </div>
+    <div class="text-wrapper2">
+       <p1> <center> Hello, and Welcome to my website. I created this website because I wanted to be able to tell people about myself over more than just a small card (which, if everything went according to plan, you came to this website from a card) or a professional resume. This website is a record of all my accomplishments, both big and small, engineering or art, and, of course, the intersection of the last two. I've personally dabbled in many things: sewing, writing, programming, small-scale airplane models, caligraphy, digital art, cooking (particularly with eggs), Linguistics, and others; and on this website, I plan on putting everything noteworthy that I've done in those categories into nice, organized piles for people to be able to see and know about me what they want to know about me. If you wanted to get to know me a little more personally, you can check out the <a href="link">about me</a> section (no promises on what's in there though).</center> </p1> <br>
+       <p1><center>If you wanted there to be more to read in the intro, I'm really flattered that you thought there'd be much more... but as luck would have it, that's about it. You can check out the rest of the website for all the other important things I have to show! <br><br> Achievements related to AI, Photoshop, Python, past jobs, and many more await!</center></p1>
+    </div>
+    <div class="image1-wrapper"> 
+       <div> <img src="fern-art-ph.png" alt="Picture of art" class="img1"> </div>
+    </div>
+    <div class="image2-wrapper"> 
+       <div> <img src="fern-engineering-ph.png" alt="Picture of engineering" class="img2"> </div>
+    </div>
+    <div class="image3-wrapper"> 
+       <div> <img src="poop.png" alt="back to top" class="img3"> </div>
+    </div>
+    <div class="image4-wrapper"> 
+       <div> <img src="poop.png" alt="STEM" class="img4"> </div>
+    </div>
+    <div class="image5-wrapper"> 
+       <div> <img src="poop.png" alt="Art" class="img5"> </div>
+    </div>
+  </div>
+
+  <script>
+    // JavaScript to handle image movement on scroll
+    window.addEventListener("load", function() {
+      var containerHeight = document.querySelector(".container").offsetHeight;
+      var windowHeight = window.innerHeight;
+      var windowWidth = window.innerWidth;
+      if(windowWidth < 1.5*windowHeight){ // Mobile
+      	document.querySelector(".text-wrapper2").style.transform = `translateY(0px)`;
+      }
+      else{ // Desktop
+      	document.querySelector(".text-wrapper2").style.transform = `translateY(-900px)`;		
+      }
+      
+    });
+    
+    
+    window.addEventListener("scroll", function() {
+      var containerHeight = document.querySelector(".container").offsetHeight;
+      var windowHeight = window.innerHeight;
+      var windowWidth = window.innerWidth;
+      var scrollPosition = window.scrollY;
+
+      // Calculate the percentage of how far the user has scrolled through the container
+      var scrollPercentage = (scrollPosition / 50) * 100;
+
+      // Calculate the amount of translation for the image-wrapper
+      var translateX = -2 * (scrollPercentage * (document.querySelector(".image2-wrapper").offsetWidth - window.innerWidth) / 100);
+      var translateY = translateX / 4;
+      if(windowWidth < 1.5*windowHeight){
+      	var paragraphPopsUp = -500 + translateY;   
+        var backToTopPopsUp = Math.min(-250 + paragraphPopsUp, 200);
+        var STEMPopsUp = Math.max(4500-translateX, -windowWidth/2);
+        var ARTPopsUp = Math.min(translateX-4500, windowWidth/2);
+      }
+      else{
+      	var paragraphPopsUp = -1070 + translateY;   
+        var backToTopPopsUp = Math.min(-820 + paragraphPopsUp, 200);
+        var STEMPopsUp = Math.max(7000-translateX, -windowWidth/2);
+        var ARTPopsUp = Math.min(translateX-7000, windowWidth/2);  	
+      }
+      // Apply the transform to the image-wrapper to move the images
+      document.querySelector(".image2-wrapper").style.transform = `translateX(${translateX}px)`;  
+      document.querySelector(".image1-wrapper").style.transform = `translateX(${-translateX}px)`;
+      document.querySelector(".text-wrapper1").style.transform = `translateY(${-translateY}px)`;
+      document.querySelector(".text-wrapper2").style.transform = `translateY(${paragraphPopsUp}px)`;
+      document.querySelector(".image3-wrapper").style.transform = `translateY(${backToTopPopsUp}px)`;
+      document.querySelector(".image4-wrapper").style.transform = `translateX(${STEMPopsUp}px)`;
+      document.querySelector(".image5-wrapper").style.transform = `translateX(${ARTPopsUp}px)`;
+    });
+  </script>
+
+</body>
+</html>
