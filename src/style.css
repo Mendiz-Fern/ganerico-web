@@ -1,0 +1,83 @@
+/* Adding in the GaneriCo colors */
+:root {
+    --gco-red: #b1211e;
+    --gco-dark-red: #962523;
+    --gco-gray: #444444;
+}
+
+
+/* --- Sidebar Styling --- */
+.sidebar {
+    padding-top: 20px;
+    height: 100%; /* Full viewport height */
+    width: 250px; /* Fixed width for the menu */
+    position: fixed; /* Keeps the menu fixed on the screen */
+    top: 50;
+    left: 0;
+    background-color: var(--gco-red);
+    overflow-x: hidden; /* Prevents horizontal scroll */
+    transition: transform 0.3s ease; /* Smooth transition for opening/closing */
+    z-index: 1000; /* Ensures the menu is above other content */
+    border-right: 1px solid #ccc;
+    transform: translateX(-100%)
+}
+
+/* Class to move the sidebar to the left when active */
+.sidebar.active {
+    transform: translateX(0);
+}
+
+/* --- Sidebar Item Styling --- */
+.sidebar-item {
+    display: block;
+    padding: 10px 25px;
+    text-decoration: none;
+    color: white;
+    font-size: 20px;
+    transition: background-color 0.2s;
+}
+
+.sidebar-item:hover {
+    background-color: var(--gco-dark-red);
+}
+
+/* --- Main Content Area Styling --- */
+#content, #content.shifted{
+    display: flex;
+    margin-left: 0px; /* Offset the main content by the width of the sidebar */
+    padding: 20px;
+    transition: margin-left 0.3s ease; /* Smooth transition for content shifting */
+    align-items: center;
+    flex-wrap: wrap;
+    flex-direction: column;
+}   
+
+#content.shifted {
+    margin-left: 250px; /* Offset the main content by the width of the sidebar */
+}
+
+/* --- Button Styling --- */
+.menu-button {
+    display: inline-flex;
+    cursor: pointer;
+    background-color: transparent;
+    color: black;
+    border: none;
+    padding: 10px 10px;
+    font-size: 30px;
+    align-items: center;
+    gap: 8px;
+}
+
+.menu-button:hover {
+    color: var(--gco-gray);
+}
+
+/* hopefully this bit can change the paragraph margins to not look like one is in America and the other is in Australia */
+
+p {
+    margin: 0px;
+    text-align: center; /* Miiiight be best to _not_ do this bc I'm not 100% sure I'mma want everything centered, but for nowwwwww...*/
+    padding-left: 20%; 
+    padding-right: 20%;
+}

@@ -1,24 +1,41 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
-    <title>Big Things</title>
-    <style>
-        body, html {
-            margin: 0;
-            padding: 0;
-            height: 100%;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-        }
-        img {
-            max-width: 100%;
-            max-height: 200%;
-            object-fit: contain;
-        }
-    </style>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>GaneriCo - Home</title>
+    <link rel="icon" type="image/png" href="refimg/favicon.png">
+    <link rel="stylesheet" href="src/style.css">
 </head>
 <body>
-    <img src="GaneriCo Big Things [DARK].png" alt="bigthings.png">
+
+    <!-- 1. The Menu Button -->
+    <button id="menu-button" class="menu-button">
+        <img src="refimg/gco-icon.png" alt="☰" width="50">
+        GaneriCo
+    </button>
+
+    <!-- 2. The Sidebar -->
+    <div id="sidebar" class="sidebar">
+        
+        <a href="index.html" class="sidebar-item">Home</a>
+        <a href="about.html" class="sidebar-item">About GaneriCo</a>
+        <a href="TAP.html" class="sidebar-item">Third Arm Project</a>
+        <a href="fernbot.html" class="sidebar-item">Fernbot 2.0</a>
+        <a href="big-gan.html" class="sidebar-item">Big-Gan Keyboard</a>
+        <a href="257.html" class="sidebar-item">257</a>
+        <a href="mika.html" class="sidebar-item">Mika</a>
+    </div>
+
+    <!-- 3. Main Content Area -->
+    <main id="content">
+        <img src="refimg/gco-logo.png" alt="GaneriCo Logo" width="35%">
+        <p style="font-size: 20px;"> For People. By People.</p>
+        <p>B O T T O M - T E X T</p>
+        <p style="padding-top: 30px;">Hello! This is currently a placeholder site! It will be ready soon though so be sure check in later!</p>
+        <p> All of the content in this site and its children is up to date, but animations, images, and other QOL features have yet to come!! You can click on the GaneriCo icon on the top left corner of the page to open the menu</p>
+    </main>
+
+    <script src="src/script.js"></script>
 </body>
 </html>
