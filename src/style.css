@@ -6,6 +6,8 @@
 }
 
 
+
+
 /* --- Sidebar Styling --- */
 .sidebar {
     padding-top: 20px;
@@ -42,7 +44,7 @@
 }
 
 /* --- Main Content Area Styling --- */
-#content, #content.shifted{
+#content, #content.shifted, #subcontent{
     display: flex;
     margin-left: 0px; /* Offset the main content by the width of the sidebar */
     padding: 20px;
@@ -55,6 +57,7 @@
 #content.shifted {
     margin-left: 250px; /* Offset the main content by the width of the sidebar */
 }
+
 
 /* --- Button Styling --- */
 .menu-button {
@@ -73,6 +76,27 @@
     color: var(--gco-gray);
 }
 
+.right-justified-content {
+    display: flex;
+    font-size: 20px;
+    flex-direction: row; /* I used column last time, but this time I want an image inside of this so I'm doing row: one col for text and the next for image*/
+    align-items: right;
+    padding-left: 20%; 
+    padding-right: 10%;
+    align-items: center;
+}
+.left-justified-content {
+    display: flex;
+    font-size: 20px;
+    flex-direction: row-reverse; /* I used column last time, but this time I want an image inside of this so I'm doing row: one col for text and the next for image*/
+    align-items: left;
+    padding-left: 10%; 
+    padding-right: 20%;
+    align-items: center;
+}
+
+/* THE STUFF DOWN HERE IS FOR HTML DEFAULTS */
+
 /* hopefully this bit can change the paragraph margins to not look like one is in America and the other is in Australia */
 
 p {
@@ -80,4 +104,14 @@ p {
     text-align: center; /* Miiiight be best to _not_ do this bc I'm not 100% sure I'mma want everything centered, but for nowwwwww...*/
     padding-left: 20%; 
     padding-right: 20%;
+}
+
+body {
+    font-family: Roboto;
+    /* background-image: url("../refimg/gco-icon.png"); */
+
+    /* background-size: cover;       /* Scales image to fill the screen */
+    /* background-position: center;  /* Centers the image */
+    /* min-height: 100vh;            /* Ensures body is at least full screen height */
+    /* margin: 0; */
 }
