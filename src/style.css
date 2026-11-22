@@ -95,6 +95,14 @@
     align-items: center;
 }
 
+.link-on-red {
+    color: white;
+}
+
+.link-on-red:hover {
+    color: #A0A0A0;
+}
+
 /* THE STUFF DOWN HERE IS FOR HTML DEFAULTS */
 
 /* hopefully this bit can change the paragraph margins to not look like one is in America and the other is in Australia */
@@ -114,4 +122,12 @@ body {
     /* background-position: center;  /* Centers the image */
     /* min-height: 100vh;            /* Ensures body is at least full screen height */
     /* margin: 0; */
+}
+
+footer {
+    background-color: var(--gco-red);
+    color: white;
+    padding: 16px;
+    text-align: left;
+    font-size: 14px;
 }
