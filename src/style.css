@@ -157,6 +157,29 @@
     color: #A0A0A0;
 }
 
+
+.header-with-line {
+  display: flex;
+  align-items: center; /* Vertically centers the line with the text */
+  gap: 16px;    /* Adds space between the header and the line */
+  width: 100%;       
+  font-size: 20px;
+}
+
+.header-with-line h2 {
+  margin: 0;           /* Removes default heading margins */
+  white-space: nowrap; /* Prevents the title from wrapping onto two lines */
+  color: var(--gco-gray);
+}
+
+.header-with-line hr {
+  flex-grow: 1;        /* Tells the line to take up all remaining width */
+  min-width: 20px;
+  border: none;
+  height: 2px;
+  background-color: var(--gco-gray);
+}
+
 /* THE STUFF DOWN HERE IS FOR HTML DEFAULTS */
 
 /* hopefully this bit can change the paragraph margins to not look like one is in America and the other is in Australia */
