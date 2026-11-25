@@ -3,6 +3,7 @@
     --gco-red: #b1211e;
     --gco-dark-red: #962523;
     --gco-gray: #444444;
+    --gco-light-gray: #A0A0A0;
 }
 
 @font-face {
@@ -161,8 +162,9 @@
 .header-with-line {
   display: flex;
   align-items: center; /* Vertically centers the line with the text */
+  justify-content: flex-start;
   gap: 16px;    /* Adds space between the header and the line */
-  width: 100%;       
+  width: 100%;        
   font-size: 20px;
 }
 
@@ -178,6 +180,32 @@
   border: none;
   height: 2px;
   background-color: var(--gco-gray);
+}
+
+.work-entry {
+    display: flex;
+    align-items: center;      /* Vertically centers the text with the 40px line */
+    justify-content: flex-start; /* Aligns everything to the left */
+    width: 100%;              /* Forces the row to span the full container width */
+    gap: 16px;                /* Space between the line and "DATE - WORK" */
+    padding-left: 0;
+    box-sizing: border-box;
+}
+
+.work-entry hr {
+    cursor: pointer;
+    width: var(--line-width, 50%);              /* Controls how wide the line is horizontally, using the variable 'line width' and falling back to 50% if no width is set */
+    height: 40px;             /* Your 40px thickness */
+    background-color: var(--gco-gray);
+    border: none;
+    margin: 0;
+    flex-shrink: 0;           /* Prevents the line from squishing on smaller screens */
+    transition: background-color 0.3s ease, width 0.3s ease;
+}
+
+.work-entry hr:hover{
+    width: 70%;
+    background-color: var(--gco-red);
 }
 
 /* THE STUFF DOWN HERE IS FOR HTML DEFAULTS */
